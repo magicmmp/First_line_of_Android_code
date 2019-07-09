@@ -14,6 +14,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     //Git测试，怎么提交不了？
+    //Go to Settings > Version Control > Git. Make sure SSH executable is set to “Native.”
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
