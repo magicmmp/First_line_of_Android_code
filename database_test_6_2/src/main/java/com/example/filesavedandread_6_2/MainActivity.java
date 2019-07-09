@@ -13,7 +13,7 @@ public class MainActivity extends AppCompatActivity {
     private MyDatabaseHelper dbHelper;
 
     @Override
-    //Git测试，第一
+    //Git测试，怎么提交不了？
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
