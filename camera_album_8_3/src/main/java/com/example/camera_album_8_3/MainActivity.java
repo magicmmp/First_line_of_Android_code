@@ -33,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
     private ImageView picture;
     private Uri imageUri;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
