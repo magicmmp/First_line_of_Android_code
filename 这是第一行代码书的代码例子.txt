@@ -1,0 +1,8 @@
+此文件夹是git仓库。
+对应联想笔记本win10的    C:\Users\pss\AndroidStudioProjects   文件夹。
+这些代码是照第一行代码书中的例子写的，一般都可以运行。
+以后可以用来复习，使用相关代码时候=，不用再敲一遍。
+
+2019-7-9记录
+
+利用AndroidStudio Git工具测试
