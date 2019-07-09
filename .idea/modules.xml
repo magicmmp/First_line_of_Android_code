@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/DefineListView.iml" filepath="$PROJECT_DIR$/DefineListView.iml" />
+      <module fileurl="file://$PROJECT_DIR$/camera_album_8_3/camera_album_8_3.iml" filepath="$PROJECT_DIR$/camera_album_8_3/camera_album_8_3.iml" />
       <module fileurl="file://$PROJECT_DIR$/database_test_6_2/database_test_6_2.iml" filepath="$PROJECT_DIR$/database_test_6_2/database_test_6_2.iml" />
       <module fileurl="file://$PROJECT_DIR$/fragment_4_2/fragment_4_2.iml" filepath="$PROJECT_DIR$/fragment_4_2/fragment_4_2.iml" />
       <module fileurl="file://$PROJECT_DIR$/listview_3_5/listview_3_5.iml" filepath="$PROJECT_DIR$/listview_3_5/listview_3_5.iml" />
