@@ -13,7 +13,7 @@ public class MainActivity extends AppCompatActivity {
     private MyDatabaseHelper dbHelper;
 
     @Override
-    //Git测试，第一行代码书中例子
+    //Git测试，第一行代码
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);

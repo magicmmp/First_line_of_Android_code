@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/DefineListView.iml" filepath="$PROJECT_DIR$/DefineListView.iml" />
+      <module fileurl="file://$PROJECT_DIR$/database_test_6_2/database_test_6_2.iml" filepath="$PROJECT_DIR$/database_test_6_2/database_test_6_2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/fragment_4_2/fragment_4_2.iml" filepath="$PROJECT_DIR$/fragment_4_2/fragment_4_2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/listview_3_5/listview_3_5.iml" filepath="$PROJECT_DIR$/listview_3_5/listview_3_5.iml" />
+      <module fileurl="file://$PROJECT_DIR$/local_broadcast_receiver_5_4/local_broadcast_receiver_5_4.iml" filepath="$PROJECT_DIR$/local_broadcast_receiver_5_4/local_broadcast_receiver_5_4.iml" />
+      <module fileurl="file://$PROJECT_DIR$/msgui/msgui.iml" filepath="$PROJECT_DIR$/msgui/msgui.iml" />
+      <module fileurl="file://$PROJECT_DIR$/newsapp_4_5/newsapp_4_5.iml" filepath="$PROJECT_DIR$/newsapp_4_5/newsapp_4_5.iml" />
+      <module fileurl="file://$PROJECT_DIR$/recyclerviewtest/recyclerviewtest.iml" filepath="$PROJECT_DIR$/recyclerviewtest/recyclerviewtest.iml" />
+    </modules>
+  </component>
+</project>
