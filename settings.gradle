@@ -1,1 +1,1 @@
-include ':listview_3_5', ':recyclerviewtest', ':msgui', ':fragment_4_2', ':newsapp_4_5', ':local_broadcast_receiver_5_4', ':database_test_6_2'
+include ':listview_3_5', ':recyclerviewtest', ':msgui', ':fragment_4_2', ':newsapp_4_5', ':local_broadcast_receiver_5_4', ':database_test_6_2', ':notificationtest_8_2'
