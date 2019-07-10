@@ -12,6 +12,7 @@
       <module fileurl="file://$PROJECT_DIR$/newsapp_4_5/newsapp_4_5.iml" filepath="$PROJECT_DIR$/newsapp_4_5/newsapp_4_5.iml" />
       <module fileurl="file://$PROJECT_DIR$/notificationtest_8_2/notificationtest_8_2.iml" filepath="$PROJECT_DIR$/notificationtest_8_2/notificationtest_8_2.iml" />
       <module fileurl="file://$PROJECT_DIR$/recyclerviewtest/recyclerviewtest.iml" filepath="$PROJECT_DIR$/recyclerviewtest/recyclerviewtest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/webviewtest_9_1/webviewtest_9_1.iml" filepath="$PROJECT_DIR$/webviewtest_9_1/webviewtest_9_1.iml" />
     </modules>
   </component>
 </project>
