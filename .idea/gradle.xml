@@ -9,8 +9,10 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/Bind_Service_10_3" />
             <option value="$PROJECT_DIR$/camera_album_8_3" />
             <option value="$PROJECT_DIR$/database_test_6_2" />
+            <option value="$PROJECT_DIR$/download_use_service_10_6" />
             <option value="$PROJECT_DIR$/fragment_4_2" />
             <option value="$PROJECT_DIR$/listview_3_5" />
             <option value="$PROJECT_DIR$/local_broadcast_receiver_5_4" />
