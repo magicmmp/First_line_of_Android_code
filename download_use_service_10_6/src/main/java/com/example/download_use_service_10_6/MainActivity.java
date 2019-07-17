@@ -1,4 +1,5 @@
 package com.example.download_use_service_10_6;
+
 import android.Manifest;
 import android.content.ComponentName;
 import android.content.Intent;
@@ -11,11 +12,14 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
+
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
     private DownloadService.DownloadBinder downloadBinder;
+    private TextView fileSize_tv;
 
     private ServiceConnection connection = new ServiceConnection() {
 
@@ -37,6 +41,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Button startDownload = (Button) findViewById(R.id.start_download);
         Button pauseDownload = (Button) findViewById(R.id.pause_download);
         Button cancelDownload = (Button) findViewById(R.id.cancel_download);
+        //获取网络文件大小
+        Button file_size_btn = (Button) findViewById(R.id.file_size_btn);
+        file_size_btn.setOnClickListener(this);
+        fileSize_tv=(TextView)findViewById(R.id.fileSize_tv);
+
         startDownload.setOnClickListener(this);
         pauseDownload.setOnClickListener(this);
         cancelDownload.setOnClickListener(this);
@@ -64,6 +73,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.cancel_download:
                 downloadBinder.cancelDownload();
+                break;
+            case R.id.file_size_btn:
+                    long fileLength=downloadBinder.getFileSize();
+                    fileSize_tv.setText("文件大小："+fileLength+" 字节");
                 break;
             default:
                 break;

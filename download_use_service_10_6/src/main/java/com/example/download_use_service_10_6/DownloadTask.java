@@ -26,6 +26,7 @@ public class DownloadTask extends AsyncTask<String, Integer, Integer> {
     private boolean isPaused = false;
 
     private int lastProgress;
+    long contentLength=-1;
 
     public DownloadTask(DownloadListener listener) {
         this.listener = listener;
@@ -45,7 +46,7 @@ public class DownloadTask extends AsyncTask<String, Integer, Integer> {
             if (file.exists()) {
                 downloadedLength = file.length();
             }
-            long contentLength = getContentLength(downloadUrl);
+            contentLength = getContentLength(downloadUrl);
             if (contentLength == 0) {
                 return TYPE_FAILED;
             } else if (contentLength == downloadedLength) {
@@ -63,7 +64,7 @@ public class DownloadTask extends AsyncTask<String, Integer, Integer> {
                 is = response.body().byteStream();
                 savedFile = new RandomAccessFile(file, "rw");
                 savedFile.seek(downloadedLength); // 跳过已下载的字节
-                byte[] b = new byte[1024];
+                byte[] b = new byte[2048];
                 int total = 0;
                 int len;
                 while ((len = is.read(b)) != -1) {
@@ -106,6 +107,7 @@ public class DownloadTask extends AsyncTask<String, Integer, Integer> {
     protected void onProgressUpdate(Integer... values) {
         int progress = values[0];
         if (progress > lastProgress) {
+            //更新通知的下载进度
             listener.onProgress(progress);
             lastProgress = progress;
         }
@@ -137,6 +139,10 @@ public class DownloadTask extends AsyncTask<String, Integer, Integer> {
 
     public void cancelDownload() {
         isCanceled = true;
+    }
+    public long getContentLength()
+    {
+        return contentLength;
     }
 
     private long getContentLength(String downloadUrl) throws IOException {

@@ -83,6 +83,13 @@ public class DownloadService extends Service {
             }
         }
 
+        public long getFileSize()
+        {
+            if (downloadTask != null)
+                return  downloadTask.getContentLength();
+            else
+                return  -1;
+        }
         public void cancelDownload() {
             if (downloadTask != null) {
                 downloadTask.cancelDownload();

@@ -4,10 +4,13 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Bind_Service_10_3/Bind_Service_10_3.iml" filepath="$PROJECT_DIR$/Bind_Service_10_3/Bind_Service_10_3.iml" />
       <module fileurl="file://$PROJECT_DIR$/DefineListView.iml" filepath="$PROJECT_DIR$/DefineListView.iml" />
+      <module fileurl="file://$PROJECT_DIR$/baidu_lbs_test_11_2/baidu_lbs_test_11_2.iml" filepath="$PROJECT_DIR$/baidu_lbs_test_11_2/baidu_lbs_test_11_2.iml" />
       <module fileurl="file://$PROJECT_DIR$/camera_album_8_3/camera_album_8_3.iml" filepath="$PROJECT_DIR$/camera_album_8_3/camera_album_8_3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/coolweather_14/coolweather_14.iml" filepath="$PROJECT_DIR$/coolweather_14/coolweather_14.iml" />
       <module fileurl="file://$PROJECT_DIR$/database_test_6_2/database_test_6_2.iml" filepath="$PROJECT_DIR$/database_test_6_2/database_test_6_2.iml" />
       <module fileurl="file://$PROJECT_DIR$/download_use_service_10_6/download_use_service_10_6.iml" filepath="$PROJECT_DIR$/download_use_service_10_6/download_use_service_10_6.iml" />
       <module fileurl="file://$PROJECT_DIR$/fragment_4_2/fragment_4_2.iml" filepath="$PROJECT_DIR$/fragment_4_2/fragment_4_2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/glide_load_picture_14_5/glide_load_picture_14_5.iml" filepath="$PROJECT_DIR$/glide_load_picture_14_5/glide_load_picture_14_5.iml" />
       <module fileurl="file://$PROJECT_DIR$/listview_3_5/listview_3_5.iml" filepath="$PROJECT_DIR$/listview_3_5/listview_3_5.iml" />
       <module fileurl="file://$PROJECT_DIR$/local_broadcast_receiver_5_4/local_broadcast_receiver_5_4.iml" filepath="$PROJECT_DIR$/local_broadcast_receiver_5_4/local_broadcast_receiver_5_4.iml" />
       <module fileurl="file://$PROJECT_DIR$/msgui/msgui.iml" filepath="$PROJECT_DIR$/msgui/msgui.iml" />
