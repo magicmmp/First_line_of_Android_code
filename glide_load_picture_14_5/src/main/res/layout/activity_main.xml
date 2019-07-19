@@ -11,13 +11,25 @@
         android:layout_height="wrap_content"
         android:scaleType="centerCrop" />
 
-    <Button
-        android:text="换一张图片"
-
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+    <LinearLayout
         android:layout_alignParentBottom="true"
-        android:id="@+id/button" />
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:text="换一张图片"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/button" />
+
+        <Button
+            android:text="删除"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/delete_picture" />
+    </LinearLayout>
+
+
 
 
 </RelativeLayout>

@@ -25,10 +25,10 @@ public class MainActivity extends AppCompatActivity {
 
 
     private ImageView bingPicImg;
-    boolean isUpdate;
     List<String> urlList;
-    int idx;
-    private String picName="meinv"; // pic.bmp
+    List<File>   fileList;
+    int fileNum=0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,51 +39,123 @@ public class MainActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                idx=(idx+1)%urlList.size();
-                changePic(urlList.get(idx),true);
+                    changePic();
+            }
+        });
+        Button delete_picture=(Button)findViewById(R.id.delete_picture);
+        delete_picture.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v)
+            {
+                if(fileList.size()>0)
+                {
+                    File file=fileList.get(fileNum);
+                    if(file.exists())
+                        file.delete();
+                    fileList.remove(fileNum);
+                    changePic();
+                }
             }
         });
 
-        String p1="http://pic30.nipic.com/20130605/7447430_163105479000_2.jpg";
-        String p2="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2600834561,590596787&fm=26&gp=0.jpg";
-        String p3="http://b-ssl.duitang.com/uploads/item/201703/13/20170313012900_VYSJT.thumb.700_0.jpeg";
-        String p4="http://s1.sinaimg.cn/middle/93f1e65egb38f437a37f0&690";
-        String p5="http://img01.tooopen.com/Downs/images/2010/12/30/sy_20101230005631984036.jpg";
+
+
+
+        String tmpUrl;
+        String p1;
+        String p2;
+        String p3;
+        String p4;
+        String p5;
+        String p6;
+        String p7;
+        String p8;
+
+        boolean isTest=true;//是否从本地服务器下载
+        if(isTest)
+        {
+            tmpUrl="http://10.0.2.2/last.jpg";
+            p1="http://10.0.2.2/p1.jpg";
+            p2="http://10.0.2.2/p2.jpg";
+            p3="http://10.0.2.2/p3.jpg";
+            p4="http://10.0.2.2/p4.jpg";
+            p5="http://10.0.2.2/p5.jpg";
+            p6="http://10.0.2.2/p6.jpg";
+            p7="http://10.0.2.2/p7.jpg";
+            p8="http://10.0.2.2/p8.jpg";
+
+        }
+        else
+        {
+            tmpUrl="https://tp.85814.com/d/file/shutu/2017-10/mwsscdyqvq4.jpg!800";
+            p1="http://pic30.nipic.com/20130605/7447430_163105479000_2.jpg";
+            p2="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2600834561,590596787&fm=26&gp=0.jpg";
+            p3="http://img1.ph.126.net/rkc8aZrh8sk_hgTwtZoozw==/643451796778087126.jpg";
+            p4="http://s1.sinaimg.cn/middle/93f1e65egb38f437a37f0&690";
+            p5="http://img01.tooopen.com/Downs/images/2010/12/30/sy_20101230005631984036.jpg";
+            p6="http://img3.imgtn.bdimg.com/it/u=4192583303,404022542&fm=26&gp=0.jpg";
+            p7="https://tp.85814.com/d/file/shutu/2017-10/krtv00dbfiw.jpg!800";
+            p8="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1443687308,2680039915&fm=26&gp=0.jpg";
+        }
+
         urlList=new ArrayList<>();
         urlList.add(p1);
         urlList.add(p2);
         urlList.add(p3);
         urlList.add(p4);
         urlList.add(p5);
-
-        idx=0;
-
-        File tmpFile=new File(getFilesDir(),picName);
-        if(tmpFile.exists())
-            isUpdate=false;
-        else
-            isUpdate=true;
-
-        changePic(urlList.get(idx),isUpdate);
+        urlList.add(p6);
+        urlList.add(p7);
+        urlList.add(p8);
 
 
 
-    }
-
-    private void changePic(String url,boolean isUpdate)
-    {
-        if(isUpdate)
         try
         {
-            loadBingPic(url);
+            downloadPictureAndSave(tmpUrl,"last.jpg");
         }
         catch (IOException e)
         {
             e.printStackTrace();
         }
-        File file=new File(getFilesDir(),picName);
-        Log.d("Haha", "本地图片大小="+file.length());
-        Glide.with(MainActivity.this).load(file).into(bingPicImg);
+
+        fileList=new ArrayList<>();
+        for(int i=0;i<urlList.size();i++)
+        {
+            String tmpName=i+".jpg";
+            File tmpFile=new File(getFilesDir(),tmpName);
+            try
+            {
+                downloadPictureAndSave(urlList.get(i),tmpName);
+                fileList.add(tmpFile);
+            }
+            catch (IOException e)
+            {
+                e.printStackTrace();
+            }
+        }
+
+       changePic();
+
+    }
+
+    private void changePic()
+    {
+        if(fileList.size()>0)
+        {
+            fileNum=(fileNum+1)%fileList.size();
+            File file=fileList.get(fileNum);
+            Log.d("Haha", "本地图片"+file+"大小="+file.length());
+            Glide.with(MainActivity.this).load(file).into(bingPicImg);
+        }
+        else
+        {
+            File tmpFile=new File(getFilesDir(),"last.jpg");
+            if(tmpFile.exists())
+                Glide.with(MainActivity.this).load(tmpFile).into(bingPicImg);
+            else
+                finish();
+        }
     }
 
 
@@ -98,7 +170,7 @@ public class MainActivity extends AppCompatActivity {
     /**
      * 估计是下载逻辑有问题，导致文件下载不完整
      */
-    private void loadBingPic(String picUrl) throws IOException{
+    private void downloadPictureAndSave(String picUrl, final String SavedAsPicName) throws IOException{
 
         sendOkHttpRequest(picUrl, new okhttp3.Callback() {
             @Override
@@ -108,7 +180,7 @@ public class MainActivity extends AppCompatActivity {
                     InputStream is = response.body().byteStream();
                     byte[] arr = new byte[1024];
 
-                    File f=new File(getFilesDir(),picName);
+                    File f=new File(getFilesDir(),SavedAsPicName);
                     FileOutputStream out=new FileOutputStream(f);
 
                     int len;
@@ -130,4 +202,19 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    @Override
+    protected void onDestroy() {
+        for(int i=0;i<urlList.size();i++)
+        {
+            String tmpName=i+".jpg";
+            File tmpFile=new File(getFilesDir(),tmpName);
+            if(tmpFile.exists())
+                tmpFile.delete();
+        }
+        File lastFile=new File(getFilesDir(),"last.jpg");
+        if(lastFile.exists())
+            lastFile.delete();
+        super.onDestroy();
+
+    }
 }
